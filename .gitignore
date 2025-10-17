@@ -1,0 +1,18 @@
+# Gradle and build outputs
+.gradle/
+build/
+# Compiled classes and intermediate outputs
+bin/
+out/
+# Dev runtime and logs
+run/
+# IDE files (keep VS Code settings; ignore IntelliJ)
+.idea/
+*.iml
+# OS-specific cruft
+.DS_Store
+Thumbs.db
+# Logs
+*.log
+# Misc
+# (Keep .vscode under version control)

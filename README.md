@@ -1,25 +1,36 @@
 
-Installation information
-=======
+Apprehending Enchantment
+========================
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+A NeoForge mod for Minecraft `1.21.1` that adds a new weapon enchantment, Apprehending. Killing mobs with an Apprehending-enchanted sword or axe has a chance to drop that mob's vanilla spawn egg.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+Features
+- New enchantment: `Apprehending` (levels I–III) on `swords` and `axes`
+- Player-only kills trigger the effect; excludes bosses
+- Drops exactly one spawn egg per proc; no egg if the entity has no vanilla egg
+- Chance per level: I 5%, II 10%, III 15%
+- Not affected by `Looting` or similar drop-boosting enchantments
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+Obtaining
+- Enchanting Table: Available like other weapon enchantments with standard XP costs
+- Librarian trades:
+  - Apprentice: Apprehending I for `12–16` emeralds + `1 book`
+  - Higher levels: Apprehending II (`24–28` emeralds + `1 book`), Apprehending III (`36–40` emeralds + `1 book`)
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
+Compatibility
+- Works alongside common enchantments (e.g., `Mending`, `Unbreaking`, etc.)
+- Only requires the enchant to be on the `main-hand` weapon
 
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+Installation
+- Requires Minecraft `1.21.1` and NeoForge `21.1.208–21.1.211`
+- Build: `./gradlew build`
+- Place the generated JAR from `build/libs` into your Minecraft `mods` folder
+
+Configuration
+- No configuration options at this time
+
+License
+- All Rights Reserved
+
+Changelog
+- See `CHANGELOG.md` for version history and notable changes
