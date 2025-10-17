@@ -1,0 +1,13 @@
+{
+  "itemGroup.defaultmod": "Example Mod Tab",
+  "block.defaultmod.example_block": "Example Block",
+  "item.defaultmod.example_item": "Example Item",
+
+  "defaultmod.configuration.title": "Default Mod Configs",
+  "defaultmod.configuration.section.defaultmod.common.toml": "Default Mod Configs",
+  "defaultmod.configuration.section.defaultmod.common.toml.title": "Default Mod Configs",
+  "defaultmod.configuration.items": "Item List",
+  "defaultmod.configuration.logDirtBlock": "Log Dirt Block",
+  "defaultmod.configuration.magicNumberIntroduction": "Magic Number Text",
+  "defaultmod.configuration.magicNumber": "Magic Number"
+}
