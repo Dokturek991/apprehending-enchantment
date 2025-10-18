@@ -14,14 +14,8 @@
     "per_level_above_first": 0
   },
   "supported_items": [
-    "minecraft:leather_chestplate",
-    "minecraft:chainmail_chestplate",
-    "minecraft:iron_chestplate",
-    "minecraft:golden_chestplate",
-    "minecraft:diamond_chestplate",
-    "minecraft:netherite_chestplate"
+    "#minecraft:enchantable/chest_armor"
   ],
-  "primary_items": [
-  ],
+  "primary_items": [],
   "anvil_cost": 4
 }

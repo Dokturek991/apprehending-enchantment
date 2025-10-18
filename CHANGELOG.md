@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.3] - 2025-10-18
+## [0.2.0] - 2025-10-18
+- Switched to vanilla item tags for cross-mod compatibility:
+  - Endless Suffering: `supported_items` now `#minecraft:enchantable/chest_armor` (applies to any chestplate that uses the tag)
+  - Apprehending: `supported_items` and `primary_items` now include `#minecraft:axes` and `#minecraft:enchantable/sharp_weapons` (covers swords and axes from mods)
+- Updated README to the requested structure; documented tag-based applicability and obtaining methods
+- Bumped mod version to `0.2.0`
 - Added new chestplate enchantment: Endless Suffering (level I)
 - Triggers 2s-cooldown flame wave when wearer is damaged; heals per hit
 - Deals 2 damage to nearby entities (radius 2); heals wearer 2 HP per entity

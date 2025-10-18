@@ -2,41 +2,26 @@
 Apprehending Enchantment
 ========================
 
-A NeoForge mod for Minecraft `1.21.1` that adds a new weapon enchantment, Apprehending. Killing mobs with an Apprehending-enchanted sword or axe has a chance to drop that mob's vanilla spawn egg.
+A NeoForge mod for Minecraft `1.21.1` that adds two enchantments focused on combat and survivability.
 
-Features
-- New enchantment: `Apprehending` (levels I–III) on `swords` and `axes`
-- Player-only kills trigger the effect; excludes bosses
-- Drops exactly one spawn egg per proc; no egg if the entity has no vanilla egg
-- Chance per level: I 5%, II 10%, III 15%
-- Not affected by `Looting` or similar drop-boosting enchantments
-- New enchantment: `Endless Suffering` (level I, `chestplates`) — when the wearer is damaged, emits a short-range flame wave, dealing `2` damage to nearby entities and healing `2 HP` per entity; `2s` cooldown
+Main Features
+- Apprehending (I–III): Killing mobs with an enchanted sword or axe has a chance to drop that mob's vanilla spawn egg. Player-only kills; excludes bosses; not affected by Looting. Applies to any item tagged `#minecraft:axes` or `#minecraft:enchantable/sharp_weapons`.
+- Endless Suffering (I): When the wearer is damaged, emits a short-range flame wave dealing `2` damage to nearby entities and healing the wearer `2 HP` per entity hit; `2s` cooldown. Applies to any chest armor tagged `#minecraft:enchantable/chest_armor`.
 
 Obtaining
-- Enchanting Table: `Apprehending` only; `Endless Suffering` is not offered
-- Librarian trades (Apprehending; rare; only one Apprehending offer per librarian):
-  - Level 2: ~20% chance to offer Apprehending I for `12–16` emeralds + `1 book`
-  - Level 3: ~10% chance to offer Apprehending II for `24–28` emeralds + `1 book`
-  - Level 4: ~5% chance to offer Apprehending III for `36–40` emeralds + `1 book`
-  - Prices are rolled per villager within the ranges, so offers vary
-- Librarian-only (Endless Suffering):
-  - Master (level 5): ~2% chance to offer Endless Suffering I for `56–64` emeralds + `1 book`
-  - Only one Endless Suffering offer per librarian; not available via Enchanting Table
+- Enchanting Table: Apprehending only (appears on swords/axes that match the tags). Endless Suffering is not offered.
+- Librarian Trades:
+  - Apprehending (rare, one offer per librarian):
+    - Level 2: ~20% chance for Apprehending I at `12–16` emeralds + `1 book`
+    - Level 3: ~10% chance for Apprehending II at `24–28` emeralds + `1 book`
+    - Level 4: ~5% chance for Apprehending III at `36–40` emeralds + `1 book`
+  - Endless Suffering (librarian-only):
+    - Master (level 5): ~2% chance for Endless Suffering I at `56–64` emeralds + `1 book`
 
-Compatibility
-- Works alongside common enchantments (e.g., `Mending`, `Unbreaking`, etc.)
-- Only requires the enchant to be on the `main-hand` weapon
-
-Installation
-- Requires Minecraft `1.21.1` and NeoForge `21.1.208–21.1.211`
-- Build: `./gradlew build`
-- Place the generated JAR from `build/libs` into your Minecraft `mods` folder
-
-Configuration
-- No configuration options at this time
+Where to Download
 
 License
 - MIT
 
-Changelog
+Changelog Mention
 - See `CHANGELOG.md` for version history and notable changes
