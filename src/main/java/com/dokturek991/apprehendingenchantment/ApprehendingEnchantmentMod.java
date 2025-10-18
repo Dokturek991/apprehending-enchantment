@@ -17,6 +17,10 @@ public class ApprehendingEnchantmentMod {
     public static final net.minecraft.resources.ResourceKey<net.minecraft.world.item.enchantment.Enchantment> APPREHENDING_KEY =
             net.minecraft.resources.ResourceKey.create(Registries.ENCHANTMENT, net.minecraft.resources.ResourceLocation.parse(MODID + ":apprehending"));
 
+    // MARKED FOR DELETION IF ISSUES OCCUR
+    public static final net.minecraft.resources.ResourceKey<net.minecraft.world.item.enchantment.Enchantment> ENDLESS_SUFFERING_KEY =
+            net.minecraft.resources.ResourceKey.create(Registries.ENCHANTMENT, net.minecraft.resources.ResourceLocation.parse(MODID + ":endless_suffering"));
+
     public ApprehendingEnchantmentMod(IEventBus modEventBus, ModContainer modContainer) {
         // No template blocks/items/tabs; core features are implemented via events and data JSON.
     }

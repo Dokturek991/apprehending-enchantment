@@ -1,4 +1,6 @@
 {
   "enchantment.apprehending_enchantment.apprehending": "Apprehending",
-  "enchantment.apprehending_enchantment.apprehending.desc": "Killing mobs can drop their spawn egg."
+  "enchantment.apprehending_enchantment.apprehending.desc": "Killing mobs can drop their spawn egg.",
+  "enchantment.apprehending_enchantment.endless_suffering": "Endless Suffering",
+  "enchantment.apprehending_enchantment.endless_suffering.desc": "On hit, emit a flame wave that damages nearby and heals wearer."
 }
