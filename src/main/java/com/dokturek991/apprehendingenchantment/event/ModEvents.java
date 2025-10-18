@@ -68,40 +68,61 @@ public class ModEvents {
     public static void onVillagerTrades(VillagerTradesEvent event) {
         if (event.getType() != VillagerProfession.LIBRARIAN) return;
 
-        // Randomize price in the provided ranges; include a book to mirror vanilla librarian trades
-        int price1 = Mth.nextInt(RandomSource.create(), 12, 16);
-        int price2 = Mth.nextInt(RandomSource.create(), 24, 28);
-        int price3 = Mth.nextInt(RandomSource.create(), 36, 40);
-
         List<VillagerTrades.ItemListing> level2 = event.getTrades().get(2);
         List<VillagerTrades.ItemListing> level3 = event.getTrades().get(3);
         List<VillagerTrades.ItemListing> level4 = event.getTrades().get(4);
 
+        final String tradeFlagKey = ApprehendingEnchantmentMod.MODID + ":apprehending_trade_added";
+
         level2.add(new VillagerTrades.ItemListing() {
             @Override
             public MerchantOffer getOffer(Entity trader, RandomSource random) {
+                // Ensure only one Apprehending offer per librarian
+                if (trader.getPersistentData().getBoolean(tradeFlagKey)) return null;
+                // Rarity gate: ~20% chance at level 2
+                if (random.nextFloat() > 0.20f) return null;
+
                 var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(ApprehendingEnchantmentMod.APPREHENDING_KEY);
                 if (holderOpt.isEmpty()) return null;
+                int price = Mth.nextInt(random, 12, 16);
                 ItemStack book = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(holderOpt.get(), 1));
-                return new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price1), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 10, 0.05F);
+                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 10, 0.05F);
+                trader.getPersistentData().putBoolean(tradeFlagKey, true);
+                return offer;
             }
         });
         level3.add(new VillagerTrades.ItemListing() {
             @Override
             public MerchantOffer getOffer(Entity trader, RandomSource random) {
+                // Ensure only one Apprehending offer per librarian
+                if (trader.getPersistentData().getBoolean(tradeFlagKey)) return null;
+                // Rarity gate: ~10% chance at level 3
+                if (random.nextFloat() > 0.10f) return null;
+
                 var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(ApprehendingEnchantmentMod.APPREHENDING_KEY);
                 if (holderOpt.isEmpty()) return null;
+                int price = Mth.nextInt(random, 24, 28);
                 ItemStack book = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(holderOpt.get(), 2));
-                return new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price2), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 15, 0.05F);
+                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 15, 0.05F);
+                trader.getPersistentData().putBoolean(tradeFlagKey, true);
+                return offer;
             }
         });
         level4.add(new VillagerTrades.ItemListing() {
             @Override
             public MerchantOffer getOffer(Entity trader, RandomSource random) {
+                // Ensure only one Apprehending offer per librarian
+                if (trader.getPersistentData().getBoolean(tradeFlagKey)) return null;
+                // Rarity gate: ~5% chance at level 4
+                if (random.nextFloat() > 0.05f) return null;
+
                 var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(ApprehendingEnchantmentMod.APPREHENDING_KEY);
                 if (holderOpt.isEmpty()) return null;
+                int price = Mth.nextInt(random, 36, 40);
                 ItemStack book = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(holderOpt.get(), 3));
-                return new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price3), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 20, 0.05F);
+                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 20, 0.05F);
+                trader.getPersistentData().putBoolean(tradeFlagKey, true);
+                return offer;
             }
         });
     }

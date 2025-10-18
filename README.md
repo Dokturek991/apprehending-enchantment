@@ -13,9 +13,11 @@ Features
 
 Obtaining
 - Enchanting Table: Available like other weapon enchantments with standard XP costs
-- Librarian trades:
-  - Apprentice: Apprehending I for `12–16` emeralds + `1 book`
-  - Higher levels: Apprehending II (`24–28` emeralds + `1 book`), Apprehending III (`36–40` emeralds + `1 book`)
+- Librarian trades (rare; only one Apprehending offer per librarian):
+  - Level 2: ~20% chance to offer Apprehending I for `12–16` emeralds + `1 book`
+  - Level 3: ~10% chance to offer Apprehending II for `24–28` emeralds + `1 book`
+  - Level 4: ~5% chance to offer Apprehending III for `36–40` emeralds + `1 book`
+  - Prices are rolled per villager within the ranges, so offers vary
 
 Compatibility
 - Works alongside common enchantments (e.g., `Mending`, `Unbreaking`, etc.)
