@@ -2,8 +2,8 @@
   "description": {
     "translate": "enchantment.apprehending_enchantment.endless_suffering"
   },
-  "slots": ["chest"],
-  "weight": 0,
+  "slots": ["armor"],
+  "weight": 1,
   "max_level": 1,
   "min_cost": {
     "base": 25,
