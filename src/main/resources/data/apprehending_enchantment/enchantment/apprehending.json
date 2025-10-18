@@ -15,11 +15,11 @@
   },
   "supported_items": [
     "#minecraft:axes",
-    "#minecraft:enchantable/sharp_weapons"
+    "#minecraft:enchantable/sharp_weapon"
   ],
   "primary_items": [
     "#minecraft:axes",
-    "#minecraft:enchantable/sharp_weapons"
+    "#minecraft:enchantable/sharp_weapon"
   ],
   "anvil_cost": 2
 }
