@@ -158,7 +158,7 @@ public class ModEvents {
 
     @SubscribeEvent
     // MARKED FOR DELETION IF ISSUES OCCUR
-    public static void onLivingDamage(LivingDamageEvent event) {
+    public static void onLivingDamage(LivingDamageEvent.Post event) {
         LivingEntity entity = event.getEntity();
         if (!(entity instanceof Player player)) return;
         if (player.level().isClientSide) return;
