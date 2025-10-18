@@ -2,8 +2,8 @@
   "description": {
     "translate": "enchantment.apprehending_enchantment.endless_suffering"
   },
-  "slots": ["armor"],
-  "weight": 1,
+  "slots": ["chest"],
+  "weight": 10,
   "max_level": 1,
   "min_cost": {
     "base": 25,
@@ -13,9 +13,8 @@
     "base": 45,
     "per_level_above_first": 0
   },
-  "supported_items": [
-    "#minecraft:enchantable/chest_armor"
-  ],
+  "supported_items": "#minecraft:enchantable/chest_armor",
   "primary_items": [],
-  "anvil_cost": 4
+  "anvil_cost": 4,
+  "effects": {}
 }

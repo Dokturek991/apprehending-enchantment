@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0] - 2025-10-18
+- Rebrand: display name changed to "Dok's Enchants"; `mod_id` remains `apprehending_enchantment` for backward compatibility.
+- Java: renamed main mod class to `DoksEnchants` and events class to `DoksEnchantsEvents`; updated annotations and constants accordingly.
+- Config: bumped `mod_version` to `1.0.0` and `mod_name` in `gradle.properties`; `neoforge.mods.toml` is generated from templates and now reflects the new display name and version.
+- Docs: updated `README.md` title and current version.
+- Build: validated compilation locally after renames; no functional regressions observed.
+- Behavior: Apprehending and Endless Suffering mechanics unchanged; Endless Suffering librarian trade remains Novice (~5% chance) as of 0.2.1.
+
 ## [0.2.1] - 2025-10-18
 - Librarian trade for Endless Suffering moved to Novice (level 1) with ~5% chance; price 56–64 emeralds + 1 book.
 - Documentation: updated README to reflect novice trade and added version header.

@@ -13,13 +13,8 @@
     "base": 65,
     "per_level_above_first": 0
   },
-  "supported_items": [
-    "#minecraft:axes",
-    "#minecraft:enchantable/sharp_weapon"
-  ],
-  "primary_items": [
-    "#minecraft:axes",
-    "#minecraft:enchantable/sharp_weapon"
-  ],
-  "anvil_cost": 2
+  "supported_items": "#apprehending_enchantment:enchantable/apprehending_supported",
+  "primary_items": "#apprehending_enchantment:enchantable/apprehending_supported",
+  "anvil_cost": 2,
+  "effects": {}
 }

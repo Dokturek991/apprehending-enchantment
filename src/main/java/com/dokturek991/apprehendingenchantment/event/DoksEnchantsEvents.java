@@ -1,6 +1,6 @@
 package com.dokturek991.apprehendingenchantment.event;
 
-import com.dokturek991.apprehendingenchantment.ApprehendingEnchantmentMod;
+import com.dokturek991.apprehendingenchantment.DoksEnchants;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -32,8 +32,8 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.List;
 
-@EventBusSubscriber(modid = ApprehendingEnchantmentMod.MODID, bus = EventBusSubscriber.Bus.GAME)
-public class ModEvents {
+@EventBusSubscriber(modid = DoksEnchants.MODID, bus = EventBusSubscriber.Bus.GAME)
+public class DoksEnchantsEvents {
 
     @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {
@@ -53,7 +53,7 @@ public class ModEvents {
         // Check enchantment level on the player's main-hand weapon
         ItemStack weapon = player.getMainHandItem();
         var enchantmentRegistry = dead.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);
-         var apprehendingHolderOpt = enchantmentRegistry.getHolder(ApprehendingEnchantmentMod.APPREHENDING_KEY);
+         var apprehendingHolderOpt = enchantmentRegistry.getHolder(DoksEnchants.APPREHENDING_KEY);
          if (apprehendingHolderOpt.isEmpty()) return;
          int level = EnchantmentHelper.getItemEnchantmentLevel(apprehendingHolderOpt.get(), weapon);
         if (level <= 0) return;
@@ -80,10 +80,11 @@ public class ModEvents {
         List<VillagerTrades.ItemListing> level4 = event.getTrades().get(4);
         // MARKED FOR DELETION IF ISSUES OCCUR
         List<VillagerTrades.ItemListing> level5 = event.getTrades().get(5);
+        List<VillagerTrades.ItemListing> level1 = event.getTrades().get(1);
 
-        final String tradeFlagKey = ApprehendingEnchantmentMod.MODID + ":apprehending_trade_added";
+        final String tradeFlagKey = DoksEnchants.MODID + ":apprehending_trade_added";
         // MARKED FOR DELETION IF ISSUES OCCUR
-        final String tradeFlagKeyEndless = ApprehendingEnchantmentMod.MODID + ":endless_suffering_trade_added";
+        final String tradeFlagKeyEndless = DoksEnchants.MODID + ":endless_suffering_trade_added";
 
         level2.add(new VillagerTrades.ItemListing() {
             @Override
@@ -93,11 +94,11 @@ public class ModEvents {
                 // Rarity gate: ~20% chance at level 2
                 if (random.nextFloat() > 0.20f) return null;
 
-                var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(ApprehendingEnchantmentMod.APPREHENDING_KEY);
+                var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(DoksEnchants.APPREHENDING_KEY);
                 if (holderOpt.isEmpty()) return null;
                 int price = Mth.nextInt(random, 12, 16);
                 ItemStack book = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(holderOpt.get(), 1));
-                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 10, 0.05F);
+                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 4, 0.05F);
                 trader.getPersistentData().putBoolean(tradeFlagKey, true);
                 return offer;
             }
@@ -110,11 +111,11 @@ public class ModEvents {
                 // Rarity gate: ~10% chance at level 3
                 if (random.nextFloat() > 0.10f) return null;
 
-                var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(ApprehendingEnchantmentMod.APPREHENDING_KEY);
+                var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(DoksEnchants.APPREHENDING_KEY);
                 if (holderOpt.isEmpty()) return null;
                 int price = Mth.nextInt(random, 24, 28);
                 ItemStack book = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(holderOpt.get(), 2));
-                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 15, 0.05F);
+                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 6, 0.05F);
                 trader.getPersistentData().putBoolean(tradeFlagKey, true);
                 return offer;
             }
@@ -127,29 +128,29 @@ public class ModEvents {
                 // Rarity gate: ~5% chance at level 4
                 if (random.nextFloat() > 0.05f) return null;
 
-                var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(ApprehendingEnchantmentMod.APPREHENDING_KEY);
+                var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(DoksEnchants.APPREHENDING_KEY);
                 if (holderOpt.isEmpty()) return null;
                 int price = Mth.nextInt(random, 36, 40);
                 ItemStack book = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(holderOpt.get(), 3));
-                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 20, 0.05F);
+                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 8, 0.05F);
                 trader.getPersistentData().putBoolean(tradeFlagKey, true);
                 return offer;
             }
         });
         // MARKED FOR DELETION IF ISSUES OCCUR
-        level5.add(new VillagerTrades.ItemListing() {
+        level1.add(new VillagerTrades.ItemListing() {
             @Override
             public MerchantOffer getOffer(Entity trader, RandomSource random) {
                 // Ensure only one Endless Suffering offer per librarian
                 if (trader.getPersistentData().getBoolean(tradeFlagKeyEndless)) return null;
-                // Rarity gate: ~2% chance at level 5 (master)
-                if (random.nextFloat() > 0.02f) return null;
-
-                var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(ApprehendingEnchantmentMod.ENDLESS_SUFFERING_KEY);
+                // Rarity gate: ~5% chance at level 1 (novice)
+                if (random.nextFloat() > 0.05f) return null;
+ 
+                var holderOpt = trader.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT).getHolder(DoksEnchants.ENDLESS_SUFFERING_KEY);
                 if (holderOpt.isEmpty()) return null;
                 int price = Mth.nextInt(random, 56, 64);
                 ItemStack book = EnchantedBookItem.createForEnchantment(new EnchantmentInstance(holderOpt.get(), 1));
-                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 30, 0.05F);
+                MerchantOffer offer = new MerchantOffer(new net.minecraft.world.item.trading.ItemCost(Items.EMERALD, price), java.util.Optional.of(new net.minecraft.world.item.trading.ItemCost(Items.BOOK, 1)), book, 12, 8, 0.05F);
                 trader.getPersistentData().putBoolean(tradeFlagKeyEndless, true);
                 return offer;
             }
@@ -167,13 +168,13 @@ public class ModEvents {
         ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
         if (chest.isEmpty()) return;
         var enchantmentRegistry = player.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);
-        var endlessHolderOpt = enchantmentRegistry.getHolder(com.dokturek991.apprehendingenchantment.ApprehendingEnchantmentMod.ENDLESS_SUFFERING_KEY);
+        var endlessHolderOpt = enchantmentRegistry.getHolder(com.dokturek991.apprehendingenchantment.DoksEnchants.ENDLESS_SUFFERING_KEY);
         if (endlessHolderOpt.isEmpty()) return;
         int level = net.minecraft.world.item.enchantment.EnchantmentHelper.getItemEnchantmentLevel(endlessHolderOpt.get(), chest);
         if (level <= 0) return; // single level only
 
         // 2s cooldown between procs when in fight
-        final String cdKey = com.dokturek991.apprehendingenchantment.ApprehendingEnchantmentMod.MODID + ":endless_suffering_cd_until";
+        final String cdKey = com.dokturek991.apprehendingenchantment.DoksEnchants.MODID + ":endless_suffering_cd_until";
         long now = player.level().getGameTime();
         long until = player.getPersistentData().getLong(cdKey);
         if (until > now) return;
