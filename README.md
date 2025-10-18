@@ -10,14 +10,18 @@ Features
 - Drops exactly one spawn egg per proc; no egg if the entity has no vanilla egg
 - Chance per level: I 5%, II 10%, III 15%
 - Not affected by `Looting` or similar drop-boosting enchantments
+- New enchantment: `Endless Suffering` (level I, `chestplates`) — when the wearer is damaged, emits a short-range flame wave, dealing `2` damage to nearby entities and healing `2 HP` per entity; `2s` cooldown
 
 Obtaining
-- Enchanting Table: Available like other weapon enchantments with standard XP costs
-- Librarian trades (rare; only one Apprehending offer per librarian):
+- Enchanting Table: `Apprehending` only; `Endless Suffering` is not offered
+- Librarian trades (Apprehending; rare; only one Apprehending offer per librarian):
   - Level 2: ~20% chance to offer Apprehending I for `12–16` emeralds + `1 book`
   - Level 3: ~10% chance to offer Apprehending II for `24–28` emeralds + `1 book`
   - Level 4: ~5% chance to offer Apprehending III for `36–40` emeralds + `1 book`
   - Prices are rolled per villager within the ranges, so offers vary
+- Librarian-only (Endless Suffering):
+  - Master (level 5): ~2% chance to offer Endless Suffering I for `56–64` emeralds + `1 book`
+  - Only one Endless Suffering offer per librarian; not available via Enchanting Table
 
 Compatibility
 - Works alongside common enchantments (e.g., `Mending`, `Unbreaking`, etc.)
@@ -32,7 +36,7 @@ Configuration
 - No configuration options at this time
 
 License
-- All Rights Reserved
+- MIT
 
 Changelog
 - See `CHANGELOG.md` for version history and notable changes
