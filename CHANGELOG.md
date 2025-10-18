@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 
 ## [1.0.0] - 2025-10-18
-- Rebrand: display name changed to "Dok's Enchants"; `mod_id` remains `apprehending_enchantment` for backward compatibility.
+- Rebrand: display name changed to "Dok's Enchants"; `mod_id` is now `doks_enchants`.
 - Java: renamed main mod class to `DoksEnchants` and events class to `DoksEnchantsEvents`; updated annotations and constants accordingly.
 - Config: bumped `mod_version` to `1.0.0` and `mod_name` in `gradle.properties`; `neoforge.mods.toml` is generated from templates and now reflects the new display name and version.
 - Docs: updated `README.md` title and current version.

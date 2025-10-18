@@ -1,6 +1,5 @@
-package com.dokturek991.apprehendingenchantment.event;
+package com.dokturek991.doksenchants.event;
 
-import com.dokturek991.apprehendingenchantment.DoksEnchants;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
@@ -31,6 +30,8 @@ import net.minecraft.world.phys.AABB;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 import java.util.List;
+
+import com.dokturek991.doksenchants.DoksEnchants;
 
 @EventBusSubscriber(modid = DoksEnchants.MODID, bus = EventBusSubscriber.Bus.GAME)
 public class DoksEnchantsEvents {
@@ -78,12 +79,10 @@ public class DoksEnchantsEvents {
         List<VillagerTrades.ItemListing> level2 = event.getTrades().get(2);
         List<VillagerTrades.ItemListing> level3 = event.getTrades().get(3);
         List<VillagerTrades.ItemListing> level4 = event.getTrades().get(4);
-        // MARKED FOR DELETION IF ISSUES OCCUR
         List<VillagerTrades.ItemListing> level5 = event.getTrades().get(5);
         List<VillagerTrades.ItemListing> level1 = event.getTrades().get(1);
 
         final String tradeFlagKey = DoksEnchants.MODID + ":apprehending_trade_added";
-        // MARKED FOR DELETION IF ISSUES OCCUR
         final String tradeFlagKeyEndless = DoksEnchants.MODID + ":endless_suffering_trade_added";
 
         level2.add(new VillagerTrades.ItemListing() {
@@ -137,7 +136,6 @@ public class DoksEnchantsEvents {
                 return offer;
             }
         });
-        // MARKED FOR DELETION IF ISSUES OCCUR
         level1.add(new VillagerTrades.ItemListing() {
             @Override
             public MerchantOffer getOffer(Entity trader, RandomSource random) {
@@ -158,7 +156,6 @@ public class DoksEnchantsEvents {
     }
 
     @SubscribeEvent
-    // MARKED FOR DELETION IF ISSUES OCCUR
     public static void onLivingDamage(LivingDamageEvent.Post event) {
         LivingEntity entity = event.getEntity();
         if (!(entity instanceof Player player)) return;
@@ -168,13 +165,13 @@ public class DoksEnchantsEvents {
         ItemStack chest = player.getItemBySlot(EquipmentSlot.CHEST);
         if (chest.isEmpty()) return;
         var enchantmentRegistry = player.level().registryAccess().registryOrThrow(net.minecraft.core.registries.Registries.ENCHANTMENT);
-        var endlessHolderOpt = enchantmentRegistry.getHolder(com.dokturek991.apprehendingenchantment.DoksEnchants.ENDLESS_SUFFERING_KEY);
+        var endlessHolderOpt = enchantmentRegistry.getHolder(com.dokturek991.doksenchants.DoksEnchants.ENDLESS_SUFFERING_KEY);
         if (endlessHolderOpt.isEmpty()) return;
         int level = net.minecraft.world.item.enchantment.EnchantmentHelper.getItemEnchantmentLevel(endlessHolderOpt.get(), chest);
         if (level <= 0) return; // single level only
 
         // 2s cooldown between procs when in fight
-        final String cdKey = com.dokturek991.apprehendingenchantment.DoksEnchants.MODID + ":endless_suffering_cd_until";
+        final String cdKey = com.dokturek991.doksenchants.DoksEnchants.MODID + ":endless_suffering_cd_until";
         long now = player.level().getGameTime();
         long until = player.getPersistentData().getLong(cdKey);
         if (until > now) return;

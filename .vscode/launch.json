@@ -16,7 +16,7 @@
       ],
       "vmArgs": [
         "@C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\build\\moddev\\clientRunVmArgs.txt",
-        "-Dfml.modFolders\u003dapprehending_enchantment%%C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\bin\\main"
+        "-Dfml.modFolders\u003ddoks_enchants%%C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -38,7 +38,7 @@
       ],
       "vmArgs": [
         "@C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\build\\moddev\\dataRunVmArgs.txt",
-        "-Dfml.modFolders\u003dapprehending_enchantment%%C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\bin\\main"
+        "-Dfml.modFolders\u003ddoks_enchants%%C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -60,7 +60,7 @@
       ],
       "vmArgs": [
         "@C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\build\\moddev\\gameTestServerRunVmArgs.txt",
-        "-Dfml.modFolders\u003dapprehending_enchantment%%C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\bin\\main"
+        "-Dfml.modFolders\u003ddoks_enchants%%C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},
@@ -82,7 +82,7 @@
       ],
       "vmArgs": [
         "@C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\build\\moddev\\serverRunVmArgs.txt",
-        "-Dfml.modFolders\u003dapprehending_enchantment%%C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\bin\\main"
+        "-Dfml.modFolders\u003ddoks_enchants%%C:\\Users\\stane\\Documents\\Trae\\apprehending-enchantment\\bin\\main"
       ],
       "cwd": "${workspaceFolder}\\run",
       "env": {},

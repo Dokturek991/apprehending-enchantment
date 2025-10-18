@@ -1,6 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.apprehending_enchantment.apprehending"
+    "translate": "enchantment.doks_enchants.apprehending"
   },
   "slots": ["mainhand"],
   "weight": 4,
@@ -13,8 +13,8 @@
     "base": 65,
     "per_level_above_first": 0
   },
-  "supported_items": "#apprehending_enchantment:enchantable/apprehending_supported",
-  "primary_items": "#apprehending_enchantment:enchantable/apprehending_supported",
+  "supported_items": "#doks_enchants:enchantable/apprehending_supported",
+  "primary_items": "#doks_enchants:enchantable/apprehending_supported",
   "anvil_cost": 2,
   "effects": {}
 }

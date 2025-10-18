@@ -1,6 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.apprehending_enchantment.endless_suffering"
+    "translate": "enchantment.doks_enchants.endless_suffering"
   },
   "slots": ["chest"],
   "weight": 10,
